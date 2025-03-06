@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Thank You Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            background: #ff477e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff2d66;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎂 Happy Birthday Sahil! 🎉</h1>
+        <p>अपने नाम से विश करो और स्पेशल Thank You मैसेज पाओ!</p>
+        
+        <input type="text" id="nameInput" placeholder="अपना नाम लिखें..." />
+        <button onclick="sendMessage()">Wish करो 🎁</button>
+
+        <p class="message" id="thankYouMessage"></p>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let name = document.getElementById("nameInput").value;
+            let messages = [
+                "धन्यवाद, " + name + "! आपकी शुभकामनाएँ मेरे लिए बहुत खास हैं! ❤️",
+                "आपकी विश ने मेरा दिन और भी खूबसूरत बना दिया, " + name + "! 💖🎉",
+                name + ", इतनी प्यारी शुभकामनाओं के लिए तहे दिल से शुक्रिया! 😊",
+                name + ", आप जैसे दोस्तों की विशेज़ से ही मेरा बर्थडे खास बनता है! 🎂💖"
+            ];
+            
+            let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("thankYouMessage").innerText = randomMessage;
+        }
+    </script>
+
+</body>
+</html>
